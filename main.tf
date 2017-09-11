@@ -3,9 +3,9 @@
 # https://ibm-bluemix.github.io/tf-ibm-docs/
 ##############################################################################
 provider "ibmcloud" {
-  bluemix_api_key    = "${var.ibmcloud_bx_api_key}"
-  softlayer_username = "${var.ibmcloud_sl_username}"
-  softlayer_api_key  = "${var.ibmcloud_sl_api_key}"
+  bluemix_api_key    = "${var.bxapikey}"
+  softlayer_username = "${var.slusername}"
+  softlayer_api_key  = "${var.slapikey}"
 }
 #############################################################################
 # Require terraform 0.9.3 or greater to run this template
@@ -62,19 +62,19 @@ output "node_ip_addresses" {
 # Variables
 ##############################################################################
 # Required for the IBM Cloud provider for Bluemix resources
-variable "ibmcloud_bx_api_key" {
+variable "bxapikey" {
   type = "string"
   description = "Your Bluemix API Key."
 }
 # Required for the IBM Cloud provider for Softlayer resources
-variable "ibmcloud_sl_username" {
+variable "slusername" {
   type = "string"
   description = "Your Softlayer username."
 }
 # Required for the IBM Cloud provider for Softlayer resources
-variable "ibmcloud_sl_api_key" {
+variable "slapikey" {
   type = "string"
-  description = "Your Softlayer API key."
+  description = "Your SoftLayer API key."
 }
 variable "datacenter" {
   type = "string"
